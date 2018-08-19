@@ -46,7 +46,7 @@ class AllRecipes(AbstractScraper):
 
     def total_review(self):
         return self.soup.findAll(
-                'li',
+                'h4',
                 {'class': "helpful-header"}
                 )
     
