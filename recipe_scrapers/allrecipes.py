@@ -1,3 +1,4 @@
+import re
 from ._abstract import AbstractScraper
 from ._utils import get_minutes, normalize_string
 
@@ -45,10 +46,12 @@ class AllRecipes(AbstractScraper):
         ])
 
     def total_review(self):
-        return self.soup.find(
+        TR = self.soup.find(
                 'h4',
                 {'class': "helpful-header"}
                 ).get_text()
+        tr = re.findall("\d+",TR)[0]
+        return tr
     
     def reviews(self):
         reviews = self.soup.findAll(
