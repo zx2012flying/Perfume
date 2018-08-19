@@ -45,10 +45,10 @@ class AllRecipes(AbstractScraper):
         ])
 
     def total_review(self):
-        return self.soup.findAll(
-                'h4',
+        return self.soup.find(
+                'li',
                 {'class': "helpful-header"}
-                )
+                ).get_text()
     
     def reviews(self):
         reviews = self.soup.findAll(
