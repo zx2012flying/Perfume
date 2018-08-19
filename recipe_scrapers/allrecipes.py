@@ -54,12 +54,12 @@ class AllRecipes(AbstractScraper):
         return tr
     
     def reviews(self):        
-        TR = list()
+        REV = list()
         for link in self.soup.findAll('div', {'class': "reviewsummary--bar"}):
-            RE = link.get('aria-label')
-            RE = re.findall("\d+",RE)[0]
-            TR.append(RE)       
-        return TR
+            REVW = link.get('aria-label')
+            REVW = re.findall("\d+",RE)[0]
+            REV.append(REVW)       
+        return REV
             
             
             
