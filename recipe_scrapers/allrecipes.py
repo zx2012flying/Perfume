@@ -53,13 +53,8 @@ class AllRecipes(AbstractScraper):
         tr = re.findall("\d+",TR)[0]
         return tr
     
-    def reviews(self):        
-        REV = list()
-        for link in self.soup.findAll('div', {'class': "reviewsummary--bar"}):
-            REVW = link.get('aria-label')
-            REVW = re.findall("\d+",REVW)[0]
-            REV.append(REVW)       
-        return REV
+    def review_score(self):        
+        return self.soup.find('div', {'class': "rating-stars"}).get('data-ratingstars')
             
             
             
