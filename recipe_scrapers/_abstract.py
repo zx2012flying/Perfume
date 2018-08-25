@@ -24,7 +24,7 @@ class AbstractScraper():
             'instructions',
             'ingredients',
             'total_reivew',
-            'reviews'
+            'review_score'
         ]
         if name in decorated_methods:
             to_return = ''
@@ -34,7 +34,7 @@ class AbstractScraper():
             to_return = []
         if name == 'total_review':
             to_return = 0
-        if name == 'reviews':
+        if name == 'review_score':
             to_return = []
 
         if to_return is not None:
@@ -79,5 +79,5 @@ class AbstractScraper():
     def total_review(self):
         raise NotImplementedError("This should be implemented.")
 
-    def reviews(self):
+    def review_score(self):
         raise NotImplementedError("This should be implemented.")
