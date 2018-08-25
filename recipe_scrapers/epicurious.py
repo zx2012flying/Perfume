@@ -24,10 +24,10 @@ class Epicurious(AbstractScraper):
             {'itemprop': "ingredients"}
         )
 
-        return [
+        return '\n'.join([
             normalize_string(ingredient.get_text())
             for ingredient in ingredients
-        ]
+        ])
 
     def instructions(self):
         instructions = self.soup.findAll(
