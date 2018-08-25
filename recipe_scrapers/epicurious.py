@@ -1,3 +1,4 @@
+import re
 from ._abstract import AbstractScraper
 from ._utils import normalize_string
 
