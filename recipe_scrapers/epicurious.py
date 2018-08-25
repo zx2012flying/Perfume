@@ -38,3 +38,19 @@ class Epicurious(AbstractScraper):
             normalize_string(instruction.get_text())
             for instruction in instructions
         ])
+ 
+    def total_review(self):
+        return self.soup.find(
+                'span',
+                {'itemprop': "reviewCount"}
+                ).get_text()
+        
+    def review_score(self): 
+        review = self.soup.find(
+                        'div',
+                        {'class', 'prepare-again-rating'}
+                        ).get_text()
+        review = re.findall('\d+',review)
+        for i in review:
+            return int(i)
+    
