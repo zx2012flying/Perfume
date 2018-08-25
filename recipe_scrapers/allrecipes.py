@@ -24,7 +24,7 @@ class AllRecipes(AbstractScraper):
             {'class': "checkList__line"}
         )
 
-        return [
+        return '\n'.join([
             normalize_string(ingredient.get_text())
             for ingredient in ingredients
             if ingredient.get_text(strip=True) not in (
@@ -32,7 +32,7 @@ class AllRecipes(AbstractScraper):
                 '',
                 'ADVERTISEMENT'
             )
-        ]
+        ])
 
     def instructions(self):
         instructions = self.soup.findAll(
