@@ -30,10 +30,10 @@ class SimplyRecipes(AbstractScraper):
             {'class': 'recipe-ingredients'}
         ).findAll('li')
 
-        return [
+        return '\n'.join([
             normalize_string(ingredient.get_text())
             for ingredient in ingredients
-        ]
+        ])
 
     def instructions(self):
         instructions_html = self.soup.find(
@@ -45,3 +45,13 @@ class SimplyRecipes(AbstractScraper):
             normalize_string(instruction.get_text())
             for instruction in instructions_html
         ])
+    
+    def total_review(self):
+        return self.soup.find(
+                'span',
+                {'class': "total-count ratings"}
+                ).get_text()
+
+    def review_score(self):
+        review_score = self.soup.find('span', {'class': "rating-value"}).get('style')
+        return re.findall("\d+",review_score)[0] 
