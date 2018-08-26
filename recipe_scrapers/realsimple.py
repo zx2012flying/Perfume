@@ -1,3 +1,4 @@
+import re
 from ._abstract import AbstractScraper
 from ._utils import get_minutes, normalize_string
 
@@ -41,9 +42,12 @@ class RealSimple(AbstractScraper):
     
     def total_review(self):
         total_review = self.soup.find('div',{'class': "total"}).get_text()
-        return re.findall("\d+",total_review)[0]  
+        return re.findall("\d+",total_review)[0]
 
     def review_score(self):
         review_score = self.soup.find('div', {'class': "rating"})
         review_score = str(review_score)
         return review_score.count('star on', 0, len(review_score))    
+    
+      
+    
