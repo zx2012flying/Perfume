@@ -1,3 +1,4 @@
+import re
 from ._abstract import AbstractScraper
 from ._utils import get_minutes, normalize_string
 
@@ -33,10 +34,10 @@ class TastyKitchen(AbstractScraper):
             {'class': "ingredients"}
         ).findAll('li')
 
-        return [
+        return '\n'.join([
             normalize_string(ingredient.get_text())
             for ingredient in ingredients
-        ]
+        ])
 
     def instructions(self):
         instructions = self.soup.find(
@@ -48,3 +49,11 @@ class TastyKitchen(AbstractScraper):
             normalize_string(direction.get_text())
             for direction in instructions
         ])
+
+    def total_review(self):
+        total_review = self.soup.find('a',{'href': "#reviews"}).get_text()
+        return re.findall("\d+",total_review)[0]  
+
+    def review_score(self):
+        review_score = self.soup.find('a',{'href': "#comments"}).get_text()
+        return re.findall("\d+",review_score)[0]     
