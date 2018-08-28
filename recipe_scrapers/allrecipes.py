@@ -55,6 +55,7 @@ class AllRecipes(AbstractScraper):
     
     def review_score(self):        
         T = self.soup.find('div', {'class': "rating-stars"}).get('data-ratingstars')
+        T = float(T)
         T = T * 20 
         return T
             
