@@ -24,6 +24,15 @@ class AllRecipes(AbstractScraper):
             {'class': "checkList__line"}
         )
         
+        return '\n'.join([
+            normalize_string(ingredient.get_text())
+            for ingredient in ingredients
+            if ingredient.get_text(strip=True) not in (
+                'Add all ingredients to list',
+                '',
+                'ADVERTISEMENT'
+            )])
+    
         B = list()
         ING = [normalize_string(ingredient.get_text())
                for ingredient in ingredients
@@ -66,7 +75,6 @@ class AllRecipes(AbstractScraper):
                     i = ''.join([str(t), i])
                     break
             B.append(i)
-        return '\n'.join(B)
     
     def instructions(self):
         instructions = self.soup.findAll(
