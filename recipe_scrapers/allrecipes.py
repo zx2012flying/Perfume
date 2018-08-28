@@ -66,6 +66,7 @@ class AllRecipes(AbstractScraper):
                     i = ''.join([str(t), i])
                     break
             B.append(i)
+        return '\n'.join(B)
     
     def instructions(self):
         instructions = self.soup.findAll(
