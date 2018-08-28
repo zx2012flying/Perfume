@@ -32,7 +32,7 @@ class AllRecipes(AbstractScraper):
                         '',
                         'ADVERTISEMENT'
                         )]
-        for i in A:
+        for i in ING:
             for j in i.split():
                 if convert_to_float(j) != None:
                     t = convert_to_float(j)
