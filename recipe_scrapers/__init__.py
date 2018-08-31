@@ -3,6 +3,7 @@ import re
 from .allrecipes import AllRecipes
 from .bbcfood import BBCFood
 from .bbcgoodfood import BBCGoodFood
+from .bettycrocker import BettyCrocker
 from .bonappetit import BonAppetit
 from .closetcooking import ClosetCooking
 from .cookstr import Cookstr
@@ -32,6 +33,7 @@ SCRAPERS = {
     AllRecipes.host(): AllRecipes,
     BBCFood.host(): BBCFood,
     BBCGoodFood.host(): BBCGoodFood,
+    BettyCrocker.host(): BettyCrocker,
     BonAppetit.host(): BonAppetit,
     ClosetCooking.host(): ClosetCooking,
     Cookstr.host(): Cookstr,
