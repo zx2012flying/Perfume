@@ -47,7 +47,7 @@ SCRAPERS = {
     HundredAndOneCookbooks.host(): HundredAndOneCookbooks,
     Inspiralized.host(): Inspiralized,
     JamieOliver.host(): JamieOliver,
-    KraftRecipes.host(): KraftRecipes
+    KraftRecipes.host(): KraftRecipes,
     MyBakingAddiction.host(): MyBakingAddiction,
     NIHHealthyEating.host(): NIHHealthyEating,
     PaniniHappy.host(): PaniniHappy,
