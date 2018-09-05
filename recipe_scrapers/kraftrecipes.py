@@ -35,7 +35,7 @@ class KraftRecipes(AbstractScraper):
                         )]
         
         for i in ING:
-            i = i.replace('-', '')
+            i = i.replace('-', ' ')
             for j in i.split():
                 if convert_to_float(j) != None:
                     t = convert_to_float(j)
