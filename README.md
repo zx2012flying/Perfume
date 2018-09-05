@@ -6,18 +6,18 @@ The information of rating has been added.
          pip install git+git://github.com/zx2012flying/Food.git
 
 How to use?
-                  from recipe_scrapers import scrape_me
+         from recipe_scrapers import scrape_me
 
-                  scrape_me = scrape_me(
-                  'http://www.kraftrecipes.com/recipes/original-bakers-chocolate-chunk-cookies-55686.aspx'
-                  )
+         scrape_me = scrape_me(
+         'http://www.kraftrecipes.com/recipes/original-bakers-chocolate-chunk-cookies-55686.aspx'
+         )
 
-                  print(scrape_me.title(), '\n')
-                  print(scrape_me.total_time(), '\n')
-                  print(scrape_me.ingredients(), '\n')
-                  print(scrape_me.instructions(), '\n')
-                  print(scrape_me.total_review(), '\n')
-                  print(scrape_me.review_score()) 
+         print(scrape_me.title(), '\n')
+         print(scrape_me.total_time(), '\n')
+         print(scrape_me.ingredients(), '\n')
+         print(scrape_me.instructions(), '\n')
+         print(scrape_me.total_review(), '\n')
+         print(scrape_me.review_score()) 
 
 
 
