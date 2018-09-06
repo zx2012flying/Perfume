@@ -63,6 +63,8 @@ class FoodNetwork(AbstractScraper):
             i = i.replace('tablespoons', '15')
             i = i.replace('tablespoon', '15')
             i = i.replace('tbsp.', '15')
+            i = i.replace('ounces', '39.5')
+            i = i.replace('ounce', '39.5')
                 
             t = float(1)        
             for k in i.split():
