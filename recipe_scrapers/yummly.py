@@ -3,7 +3,7 @@ from ._abstract import AbstractScraper
 from ._utils import get_minutes, normalize_string
 from ._dataprocess import convert_to_float
 
-class AllRecipes(AbstractScraper):
+class Yummly(AbstractScraper):
 
     @classmethod
     def host(self):
